@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    padding: 2rem;
+}
+p {
+    padding: 1rem;
+}
+button {
+    padding: .5rem;
+    margin: 1rem;
+    color: rgb(19, 19, 20);
+    background-color: rgb(160, 114, 142);
+    border-radius: .5rem;
+}
+.main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, rgb(201, 194, 199), white);
+    /* color: black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.glass {
+    background: white;
+    min-height: 80vh;
+    display: flex;
+    width: 60%;
+    position: absolute;
+    background: linear-gradient(
+        to right top,
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0.1)
+    );
+    border-radius: 2rem;
+}
+.dashboard {
+    flex: 3;
+    /* background-color: rgb(187, 182, 180); */
+    z-index: 1;
+}
+.info {
+    flex: 7;
+}

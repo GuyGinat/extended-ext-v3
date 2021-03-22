@@ -1,0 +1,5 @@
+extension.crx
+extension.pem
+extension.zip
+.vscode
+/extension/chrome.intellisense.js
