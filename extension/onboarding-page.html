@@ -1,30 +1,39 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="onboarding-style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="onboarding-style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <main class="main">
-        <section class="glass">
-            <div class="dashboard">
-                <h2>Extended Mind</h2>
-                <p>To enable this extension to properly supply you with the value
-                    of looking into your own mind, please allow these permissions</p>
-                <button id="access-button">Allow access to all urls</button>
-                <p>You can allways request the extension to deactivate on certain pages</p>
-            </div>
-            <div class="info">
-                <p>oaisnfoisainisiand</p>
-                <button id="storage-button">get storage</button>
-                <button id="storage-save">save storage</button>
-            </div>
-        </section>
-    </main>
+  <body>
+    <nav class="header">
+      <div class="contianer">
+        <h2 class="title">Super Session</h2>
+      </div>
+    </nav>
+    <div class="onboarding">
+        <div class="message">
+            Welcome to Super Session!
+        </div>
+        <div class="cta">
+            First, in order to let this extension work properly and search your history and youtube record please enable access to all URLs
+        </div>
+        <div class="buttons">
+            <button id="access-button" class="main-button">Allow access to all urls</button>            
+        </div>
+        <div class="cta">
+            Next, sign in with your google account and start enhancing your web surfing sessions!
+        </div>
+        <div class="buttons">
+            <button id="register" class="main-button">Start using Super Session</button>
+        </div>
+    </div>    
     <script src="onboarding.js"></script>
-</body>
-
+  </body>
 </html>

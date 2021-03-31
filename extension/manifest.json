@@ -1,10 +1,18 @@
 {
-    "name": "Getting Started Example V3",
+    "name": "Extended Mind",
     "description": "Build an Extension!",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
+    },
+    "omnibox": {
+        "keyword": "e"
+    },
+    "icons":{
+        "16": "./images/16x16.png",
+        "96": "./images/16x16.png",
+        "128": "./images/16x16.png"
     },
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoKM0XLNLxabmvK/BhF72VyxHt9cd+MoWDH58jhx4FHDGpLJ/oY5a6+8D3Qyadq0iJVUMAwcB7ZHNSO4QTz4AGD9qyQguSsW0U6OggTqL+0UrtlyyesTSB6ykHT5ybNC5JYZ+9Awx62i64Fja3gC4/QBkWKI8XQfq70K1yrE6FLjxO6X1IMINDyyH7KkaXHZhtHP6B5T1n1nshJn/6tJdbOtgsT6GRsZ/jDqSS3OfMaaD2qtbG1TF1zjNG9bv5wLIwYjMaP5XrBD+3RucqbI6twGEuvpIg6r4BEj3NtwxDdYvcoP1AeQhBL1i5lkkqUD5Fku3kwld5Uk1/9fEtqtZxwIDAQAB",
     "content_scripts": [

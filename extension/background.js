@@ -9,6 +9,9 @@ getSignedIn().then((isSignedIn) => {
 });
 chrome.runtime.onInstalled.addListener((r) => {
   if (r.reason === "install") {
+    chrome.permissions.request({
+        origins: ["<all_urls>"]
+    });
     chrome.tabs.create({
       url: "onboarding-page.html",
     });
@@ -20,7 +23,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     getSignedIn().then((isSignedIn) => {
       if (isSignedIn) {
         chrome.tabs.create({
-          url: `http://localhost:8080/extension/${user_info.sub}`,
+        //   url: `http://localhost:8080/extension/${user_info.sub}`,
+          url: `http://localhost:8080/home`,
         });
         return;
       } else {
@@ -129,6 +133,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   });
 });
 
+chrome.omnibox.onInputEntered.addListener(function (text, suggest) {
+  chrome.tabs.create({
+    url: `http://localhost:8080/main?q=${text}`,
+  });
+});
+
 function getYouTubeData(tab) {
   let ytId = getVideoId(tab.url);
   let concatedText = "";
@@ -164,14 +174,14 @@ function getPageData(tab, tabId, windowId) {
           functiontoInvoke: "getInnerText",
         },
         (res) => {
-          if (!res.innerText) return
+          if (!res.innerText) return;
           let text = res.innerText;
           let payload = {
             rawText: text,
             title: title,
             link: tab.url,
           };
-          sendPage(payload, 'history')
+          sendPage(payload, "history");
         }
       );
     }
@@ -182,10 +192,12 @@ function sendPage(payload, suffix) {
   chrome.identity.getProfileUserInfo(
     { accountStatus: "ANY" },
     function (user_info) {
-      payload["users"] = [{
-        user_id: user_info.id,
-        date: Date.now(),
-      }];
+      payload["users"] = [
+        {
+          user_id: user_info.id,
+          date: Date.now(),
+        },
+      ];
       console.log(user_info.id);
       fetch("http://localhost:3001/" + suffix, {
         method: "post",
