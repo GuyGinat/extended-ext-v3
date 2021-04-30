@@ -1,5 +1,5 @@
 {
-    "name": "Extended Mind",
+    "name": "Super Session",
     "description": "Build an Extension!",
     "version": "1.0",
     "manifest_version": 3,
@@ -24,6 +24,7 @@
     "permissions": [
         "storage",
         "tabs",
+        "history",
         "activeTab",
         "scripting",
         "identity",

@@ -9,9 +9,18 @@ button.addEventListener("click", function () {
 });
 
 const logginButton = document.querySelector("#access-button");
-button.addEventListener("click", function () {
+logginButton.addEventListener("click", function () {
   console.log("asking for permissions");
   chrome.permissions.request({
     origins: ["<all_urls>"],
+  }, function(granted) {
+    if (granted) {
+      console.log(`permmision granted: ${granted}`)
+      button.classList.remove('main-button-disabled')
+      button.classList.add('main-button')
+      button.disabled = false
+    } else {
+      console.log(`no permission granted`)
+    }
   });
 });
